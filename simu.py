@@ -1,4 +1,4 @@
-# simu.py (Updated for MAPPO-GNN)
+# simu.py
 import os
 import sys
 import argparse
