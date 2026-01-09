@@ -22,16 +22,19 @@ if __name__ == "__main__":
 
     state_dim = 10
     action_dim = 2
-    n_agents = 2
-    n_episode = 1000
+    parser.add_argument("--episodes", type=int, default=1000)
+    parser.add_argument("--agents", type=int, default=2)
+    n_agents = args.agents
+    n_episode = args.episodes
 
     env = TrafficEnv("gui") if args.render else TrafficEnv()
     agent = MAPPO_GNN(n_agents, state_dim, action_dim)
 
     performance_list, co2_emission, fuel_cons, route_length, cars_list, depart_times = [], [], [], [], [], []
 
-    results_dir = r"C:\Users\ragha\OneDrive\Desktop\capy new\results"
+    results_dir = os.path.join(os.getcwd(), "results")
     os.makedirs(results_dir, exist_ok=True)
+
 
     for episode in range(n_episode):
         state = env.reset()
