@@ -5,8 +5,6 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 
-sys.path.append(r"C:\Users\ragha\OneDrive\Desktop\capy new")
-
 from env import TrafficEnv
 from mappo import MAPPO_GNN
 from utils import get_average_travel_time, get_average_CO2, get_average_fuel, get_average_length, get_total_cars
