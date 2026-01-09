@@ -6,12 +6,11 @@ import numpy as np
 class TrafficEnv:
     def __init__(self, mode='binary'):
         # If the mode is 'gui', it renders the scenario.
-        if mode == 'gui':
-            self.sumoBinary = checkBinary('sumo-gui')
-        else:
-            self.sumoBinary = checkBinary('sumo')
-        self.sumoCmd = [self.sumoBinary, "-c",
-                        r"C:\Users\ragha\OneDrive\Desktop\capy new\amman.sumocfg", '--no-step-log', '-W']
+        if not os.path.exists(sumo_cfg_path):
+            raise FileNotFoundError(f"SUMO config not found: {sumo_cfg_path}")
+
+        self.sumoBinary = checkBinary("sumo-gui" if mode == "gui" else "sumo")
+        self.sumoCmd = [self.sumoBinary, "-c", sumo_cfg_path, "--no-step-log", "-W"]
 
         self.time = None
         self.decision_time = 10
