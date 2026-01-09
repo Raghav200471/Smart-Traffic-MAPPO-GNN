@@ -2,8 +2,8 @@ import pandas as pd
 import xml.etree.ElementTree as et
 
 
-def get_average_travel_time():
-    xtree = et.parse(r"C:\\Users\\ragha\\OneDrive\\Desktop\\capy new\\amman.tripinfo.xml")
+def get_average_travel_time(tripinfo_average):
+    xtree = et.parse(tripinfo_average)
     xroot = xtree.getroot()
 
     rows = []
@@ -16,8 +16,8 @@ def get_average_travel_time():
     return travel_time["travel_time"].mean()
 
 
-def get_average_waiting_time_test_AI():
-    xtree = et.parse(r"C:\\Users\\ragha\\OneDrive\\Desktop\\capy new\\test.tripinfo.xml")
+def get_average_waiting_time_test_AI(tripinfo_test):
+    xtree = et.parse(tripinfo_test)
     xroot = xtree.getroot()
 
     rows = []
@@ -30,8 +30,8 @@ def get_average_waiting_time_test_AI():
     return waitingTime["waitingTime"].mean()
 
 
-def get_average_waiting_time_test():
-    xtree = et.parse(r"C:\\Users\\ragha\\OneDrive\\Desktop\\capy new\\test_real.tripinfo.xml")
+def get_average_waiting_time_test(tripinfo_real):
+    xtree = et.parse(tripinfo_real)
     xroot = xtree.getroot()
 
     rows = []
@@ -44,8 +44,8 @@ def get_average_waiting_time_test():
     return waitingTime["waitingTime"].mean()
 
 
-def get_average_length():
-    xtree = et.parse(r"C:\\Users\\ragha\\OneDrive\\Desktop\\capy new\\amman.tripinfo.xml")
+def get_average_length(tripinfo_average):
+    xtree = et.parse(tripinfo_average)
     xroot = xtree.getroot()
 
     rows = []
@@ -58,8 +58,8 @@ def get_average_length():
     return routeLength["routeLength"].mean() * 0.001
 
 
-def get_average_CO2():
-    xtree = et.parse(r"C:\\Users\\ragha\\OneDrive\\Desktop\\capy new\\amman.tripinfo.xml")
+def get_average_CO2(tripinfo_average):
+    xtree = et.parse(tripinfo_average)
     xroot = xtree.getroot()
 
     rows = []
@@ -73,8 +73,8 @@ def get_average_CO2():
     return co2_emission["co2_emission"].mean() * 0.0001
 
 
-def get_average_fuel():
-    xtree = et.parse(r"C:\\Users\\ragha\\OneDrive\\Desktop\\capy new\\amman.tripinfo.xml")
+def get_average_fuel(tripinfo_average):
+    xtree = et.parse(tripinfo_average)
     xroot = xtree.getroot()
 
     rows = []
@@ -88,8 +88,8 @@ def get_average_fuel():
     return fuel_cons["fuel_cons"].mean() * 0.00001
 
 
-def get_total_cars():
-    xtree = et.parse(r"C:\\Users\\ragha\\OneDrive\\Desktop\\capy new\\amman.tripinfo.xml")
+def get_total_cars(tripinfo_average):
+    xtree = et.parse(tripinfo_average)
     xroot = xtree.getroot()
 
     rows = []
